@@ -8,6 +8,8 @@ import {
   IoMdHammer,
   IoMdCall,
   IoMdClipboard,
+  IoMdMenu,
+  IoMdClose
 } from "react-icons/io";
 import { Link } from "react-router-dom";
 import "./Header.css";
@@ -21,45 +23,48 @@ const Header = () => {
 
   return (
     <div className={active ? "header" : "header-mobile"}>
+      <div className="menu-icon" onClick={activateNav}>
+        {!active ? <IoMdMenu className="menu" /> : <IoMdClose className="menu"/>}
+      </div>
       <nav>
         <ul className={active ? "ul-item" : "ul-item oicon"}>
           <li>
-            <IoMdImage />
+            <IoMdImage className="icon"/>
             <Link to="/">Alumni</Link>
           </li>
 
           <li>
-            <IoMdBookmark />
+            <IoMdBookmark className="icon"/>
             <Link to="/">History</Link>
           </li>
 
           <li>
-            <IoMdPerson />
+            <IoMdPerson className="icon"/>
             <Link to="/">Testimnials</Link>
           </li>
 
           <li>
-            <IoMdHome />
+            <IoMdHome className="icon"/>
             <Link to="/">Partners</Link>
           </li>
 
           <li>
-            <IoMdChatboxes />
+            <IoMdChatboxes className="icon"/>
             <Link to="/">About</Link>
           </li>
 
           <li>
-            <IoMdHammer />
+            <IoMdHammer className="icon"/>
             <Link to="/">Tutorials</Link>
           </li>
 
           <li>
-            <IoMdCall />
+            <IoMdCall className="icon"/>
             <Link to="/">Contact</Link>
           </li>
 
           <li>
-            <IoMdClipboard />
+            <IoMdClipboard className="icon"/>
             <Link to="/">FAQ</Link>
           </li>
         </ul>
